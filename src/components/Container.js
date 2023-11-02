@@ -7,16 +7,19 @@ const Container = () => {
   const [arrLtoR, setArrLtoR] = useState([]);
   const [arrRtoL, setArrRtoL] = useState([]);
 
+  // Selected element taken into the new array for Left to Right
   const handleArrLtoR = (e) => {
     setArrLtoR([...arrLtoR, e.target.value]);
     console.log(arrLtoR);
   };
 
+  // Selected element taken into the new array for Right to Left
   const handleArrRtoL = (e) => {
     setArrRtoL([...arrRtoL, e.target.value]);
     console.log(arrRtoL);
   };
 
+  // Appending the selected array into right original array to update it.
   const handleAddLtoR = () => {
     const unique1 = leftArrs.filter((o) => arrLtoR.indexOf(o) === -1);
     const unique2 = arrLtoR.filter((o) => leftArrs.indexOf(o) === -1);
@@ -26,6 +29,7 @@ const Container = () => {
     setArrLtoR([]);
   };
 
+  // Appending the selected array into left original array to update it.
   const handleAddRtoL = () => {
     const unique1 = rightArrs.filter((o) => arrRtoL.indexOf(o) === -1);
     const unique2 = arrRtoL.filter((o) => rightArrs.indexOf(o) === -1);
